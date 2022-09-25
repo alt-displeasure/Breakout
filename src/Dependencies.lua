@@ -1,8 +1,8 @@
 push = require 'push'
 Class = require 'class'
 
-require 'constants'
-require 'StateMachine'
+require 'src/constants'
+require 'src/StateMachine'
 
-require 'states/BaseState'
-require 'states/StartState'
+require 'src/states/BaseState'
+require 'src/states/StartState'
