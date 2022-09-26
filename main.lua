@@ -1,5 +1,7 @@
 require 'src/Dependencies'
 
+local fps = false
+
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
 
@@ -66,6 +68,9 @@ end
 
 function love.keypressed(key)
     love.keyboard.keysPressed[key] = true
+    if key == 'f' then
+        fps = (fps == false)
+    end
 end
 
 function love.keyboard.wasPressed(key)
@@ -92,7 +97,9 @@ function love.draw()
 
     gStateMachine:render()
 
-    displayFPS()
+    if fps then
+        displayFPS()
+    end
     
     push:apply('end')
 end
